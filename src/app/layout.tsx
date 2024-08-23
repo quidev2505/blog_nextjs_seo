@@ -5,6 +5,7 @@ import { Sora } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CategoryProvider } from "@/context/CategoryContext";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const sora = Sora({ subsets: ["latin"] });
 export const metadata: Metadata = {
@@ -29,6 +30,7 @@ export default function RootLayout({
             <CategoryProvider>
               <div className="flex min-h-screen flex-col items-center justify-between sm:p-24 pt-4 sm:pt-1">
                 {children}
+                <SpeedInsights />
               </div>
             </CategoryProvider>
             <Footer />
