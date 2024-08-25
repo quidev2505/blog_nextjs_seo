@@ -11,7 +11,7 @@ const Blog = ({ blogs }: any) => {
       ? blogs.results.filter(
           (blogItem: any) => blogItem?.category[0] === category
         )
-      : blogs.results;
+      : blogs?.results;
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">

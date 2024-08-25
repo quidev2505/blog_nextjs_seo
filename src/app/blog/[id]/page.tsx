@@ -48,8 +48,9 @@ export async function generateStaticParams() {
     `https://newsdata.io/api/1/latest?apikey=${process.env.API_KEYS}&country=us&category=sports,health,entertainment,technology`
   );
   const response = await res.json();
-
-  return response.results.map(({ article_id }: any) => article_id);
+  return response.results.map(({ article_id }: any) => ({
+    id: article_id,
+  }));
 }
 
 const page = async ({ params }: any) => {
