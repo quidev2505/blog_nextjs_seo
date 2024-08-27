@@ -24,17 +24,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={sora.className}>
-        <div className="bg-black">
-          <div className="mx-auto max-w-screen-lg bg-white">
-            <Header />
-            <CategoryProvider>
-              <div className="flex min-h-screen flex-col items-center justify-between sm:p-24 pt-4 sm:pt-1">
-                {children}
-                <SpeedInsights />
-              </div>
-            </CategoryProvider>
-            <Footer />
-          </div>
+        <div className="bg-white">
+          <Header />
+          <CategoryProvider>
+            <div className="flex min-h-full flex-col items-center justify-between sm:p-24 pt-4 sm:pt-1">
+              {children}
+              <SpeedInsights />
+            </div>
+          </CategoryProvider>
+          <Footer />
         </div>
       </body>
     </html>

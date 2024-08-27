@@ -12,14 +12,18 @@ const Category = ({ cat }: any) => {
   return (
     <div
       onClick={handleChange}
-      className={`
+      className="w-full h-full bg-transparent z-40 text-center"
+    >
+      <div
+        className={`
       ${
         cat === category
           ? "text-black bg-white border-2"
-          : "bg-[#5b9bea] text-white"
+          : "bg-orange text-white border-2"
       } p-4 rounded-lg shadow-md font-bold cursor-pointer`}
-    >
-      {cat}
+      >
+        {cat}
+      </div>
     </div>
   );
 };

@@ -4,11 +4,11 @@ import Category from "./Category";
 
 const Categories = ({ categories }: any) => {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mb-3">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 mb-3">
       {categories?.map((category: any) => (
         <div
           key={category}
-          className="flex items-center justify-center p-2 bg-blue-500 rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-200"
+          className="flex items-center justify-center p-2 bg-blue-400 rounded-lg shadow-md  hover:bg-blue-600 transition-colors duration-200"
         >
           <Category
             cat={category}

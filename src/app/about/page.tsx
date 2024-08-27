@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const About = async () => {
   return (
-    <div className="flex flex-col px-3">
+    <div className="flex flex-col px-3 h-[370px]">
       <h2 className="text-4xl text-blue-400 mb-4 font-bold">About Page</h2>
       <div className="text-justify">
         <h2 className="font-bold">Our Blog: Blog Latest News</h2>

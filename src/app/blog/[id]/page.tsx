@@ -64,16 +64,18 @@ const page = async ({ params }: any) => {
           Back
         </p>
       </Link>
-      <div className="relative w-full h-96 overflow-hidden rounded-lg mt-5">
+      <div className="w-full relative pt-[40%]">
         <Image
+          src={imageUrl}
+          alt="image_blog"
           fill
           style={{ objectFit: "contain" }}
-          src={imageUrl}
-          alt={""}
-        ></Image>
+          className="top-0 left-0 object-cover rounded-2xl"
+        />
       </div>
+
       <div className="mt-4">
-        <h1 className="text-3xl font-semibold">{blog.results[0].title}</h1>
+        <h1 className="md:text-3xl font-semibold">{blog.results[0].title}</h1>
         {Array(7)
           .fill(0)
           .map((item) => (

@@ -1,5 +1,4 @@
 import Categories from "@/components/Categories";
-import { CategoryProvider } from "@/context/CategoryContext";
 import dynamic from "next/dynamic";
 import { cache } from "react";
 
@@ -18,12 +17,12 @@ const fetchBlogs = cache(async () => {
 });
 
 export default async function Home() {
-  const categories = ["sports", "health", "entertainment", "technology"];
-  const blogs = await fetchBlogs();
+  const categories = ["all", "sports", "health", "entertainment", "technology"];
+  let blogs = await fetchBlogs();
   return (
-    <CategoryProvider>
-      <Categories categories={categories} />
+    <div>
+      <Categories categories={categories} className="my-10" />
       <Blog blogs={blogs} />
-    </CategoryProvider>
+    </div>
   );
 }

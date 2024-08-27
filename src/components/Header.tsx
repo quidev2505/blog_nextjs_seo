@@ -8,8 +8,8 @@ export default function Header() {
         href="/"
         className="flex items-center gap-3 justify-center w-max m-auto"
       >
-        <h2 className="text-4xl font-semibold text-black-600 border rounded-lg p-5">
-          Blog Latest News
+        <h2 className="text-2xl md:text-6xl font-semibold text-black-600 border rounded-lg p-5 bg-blue-400 text-white">
+          BLOG LATEST NEWS
         </h2>
       </Link>
       <div className="flex gap-5 mt-2 justify-end">
