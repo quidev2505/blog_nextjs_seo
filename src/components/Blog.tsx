@@ -18,7 +18,7 @@ const Blog = ({ blogs }: any) => {
       {filteredBlogs?.length === 0 && (
         <div className="flex flex-col justify-center h-[250px] mt-10 text-center">
           <h2 className="text-3xl text-blue-400 font-bold">
-            Don't have any article about this categories
+            Don&apos;t have any article about this categories
           </h2>
         </div>
       )}
