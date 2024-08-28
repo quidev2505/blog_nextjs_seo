@@ -4,7 +4,7 @@ import React from "react";
 import imgNotFound from "../../public/imgNotFound.svg";
 
 const BlogCard = ({ blog }: any) => {
-  const contentDescription = blog.description;
+  const contentDescription = blog.description
   const truncateBlogDesc =
     contentDescription?.length > 80
       ? contentDescription.substring(0, 80) + "..."
