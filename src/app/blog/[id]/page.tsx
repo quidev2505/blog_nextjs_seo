@@ -8,7 +8,7 @@ import imgNotFound from "../../../../public/imgNotFound.svg";
 const fetchBlog = cache(async (article_id: string) => {
   try {
     const res = await fetch(
-      `https://newsdata.io/api/1/latest?apikey=${process.env.API_KEYS}&id=${article_id}`
+      `https://newsdata.io/api/1/latest?apikey=${process.env.NEXT_PUBLIC_API_KEYS}&id=${article_id}`
     );
     if (res.status === 404) {
       NotFound();
@@ -45,7 +45,7 @@ export async function generateMetadata(
 
 export async function generateStaticParams() {
   const res = await fetch(
-    `https://newsdata.io/api/1/latest?apikey=${process.env.API_KEYS}&country=us&category=sports,health,entertainment,technology`
+    `https://newsdata.io/api/1/latest?apikey=${process.env.NEXT_PUBLIC_API_KEYS}&country=us&category=sports,health,entertainment,technology`
   );
   const response = await res.json();
   return response.results.map(({ article_id }: any) => ({
@@ -55,8 +55,8 @@ export async function generateStaticParams() {
 
 const page = async ({ params }: any) => {
   const blog = await fetchBlog(params.id);
-  const imageUrl = blog.results[0].image_url ?? imgNotFound;
-  const description = blog.results[0].description;
+  const imageUrl = blog.results[0]?.image_url ?? imgNotFound;
+  const description = blog.results[0]?.description;
   return (
     <div className="mx-auto p-2">
       <Link href="/">
@@ -75,7 +75,7 @@ const page = async ({ params }: any) => {
       </div>
 
       <div className="mt-4">
-        <h1 className="md:text-3xl font-semibold">{blog.results[0].title}</h1>
+        <h1 className="md:text-3xl font-semibold">{blog.results[0]?.title}</h1>
         {Array(7)
           .fill(0)
           .map((item) => (
@@ -85,7 +85,7 @@ const page = async ({ params }: any) => {
           ))}
         <div className="italic font-bold my-3">
           Link: &nbsp;
-          <Link href={blog.results[0]?.link} className="text-blue-500">
+          <Link href="image_blog_news" className="text-blue-500">
             &nbsp;{blog.results[0]?.link}
           </Link>
         </div>
@@ -93,7 +93,7 @@ const page = async ({ params }: any) => {
           Author: {blog.results[0]?.creator?.[0]}
         </p>
         <div className="mt-4 flex items-center text-gray-400">
-          <span>&copy; Published on {blog.results[0].pubDate}</span>
+          <span>&copy; Published on {blog.results[0]?.pubDate}</span>
         </div>
       </div>
     </div>

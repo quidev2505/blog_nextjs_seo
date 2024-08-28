@@ -12,6 +12,8 @@ const Blog = ({ blogs }: any) => {
           (blogItem: any) => blogItem?.category[0] === category
         )
       : blogs.results;
+  console.log("Gia tri: ");
+  console.log(filteredBlogs);
 
   return (
     <div>
